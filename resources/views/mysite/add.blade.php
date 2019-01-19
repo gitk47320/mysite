@@ -52,6 +52,15 @@
 
 <h2 id="newinfo_hdr" class="close">読書記録一括追加</h2>
 <dl id="newinfo">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <form action="books/bulkadd" method="post" enctype="multipart/form-data">
 	<input type="file" name="bulkfile">
 	<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">

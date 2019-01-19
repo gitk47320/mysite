@@ -68,19 +68,12 @@ class MysiteController extends Controller
 
     public function bookspostbulkadd(Request $req){
         //jsonファイルのチェック
-        $json_validrule = [
-            'file' => 'mimes:json'
-        ];
-        
+
         //アップロードされたjsonファイルをstorage/appに保存する
-        if($this->validate($req,$json_validrule)){
+        if($req->file('bulkfile')){
             $filename = $req->file('bulkfile')->storeAs("bulkadd.json","/");
         }
         
-        /*if ($req->file('bulkfile')->isvalid([])) {
-            //ファイルをstorage/appに保存する
-            $filename = $req->file('bulkfile')->storeAs("bulkadd.json","/");
-        }*/
         //jsonファイルを読み込む
         $json = file_get_contents("../storage/app/bulkadd.json");
         //json形式のデータを連想配列形式に変換する
