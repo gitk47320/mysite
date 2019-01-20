@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>読書記録新規追加（管理者用）</title>
+<title>読書記録</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="開発アウトプットサイトトップ">
 <meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５">
@@ -19,57 +19,29 @@
 
 <div id="container">
 
-
 <header>
 <h1 id="logo"><a href="{{action('MysiteController@top')}}"><img src="images/dplogo.png" alt="DEVELOPMENT PRODUCTS"></a></h1>
 </header>
 
 <nav id="menubar">
 <ul>
-<li class="current"><a href="{{action('MysiteController@top')}}">トップ</a></li>
-<li><a href="{{action('MysiteController@booklist')}}">読書記録</a></li>
+<li><a href="{{action('MysiteController@top')}}">トップ</a></li>
+<li class="current"><a href="{{action('MysiteController@booklist')}}">読書記録</a></li>
 </ul>
 </nav>
 
 <div id="contents">
-
 <section id="new">
-<h2 id="newinfo_hdr" class="close">読書記録新規追加（管理者用）</h2>
+<h2 id="newinfo_hdr" class="close">読書記録</h2>
 <dl id="newinfo">
-<form action="books/add" method="post">
-	{{ csrf_field() }}
-	<dl>本のタイトル：<input type="text" name="title" size="30"></dl>
-	<dl>作者：<input type="text" name="author" size="20"></dl>
-	<dl>感想：<textarea cols="50" rows="30" name="impression"></TEXTAREA></dl>
-	<dl>評価<input type="radio" name="eval" value="1">1
-	<input type="radio" name="eval" value="2">2
-	<input type="radio" name="eval" value="3">3
-	<input type="radio" name="eval" value="4">4
-	<input type="radio" name="eval" value="5">5</dl>
-	<dl><input type="submit" value="投稿"></dl>
-</form>
-</section>
 
-<h2 id="newinfo_hdr" class="close">読書記録一括追加</h2>
-<dl id="newinfo">
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-<form action="books/bulkadd" method="post" enctype="multipart/form-data">
-	<input type="file" name="bulkfile">
-	<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-	<input type="submit" value="一括投稿">
-</form>
-</dl>
+<dl>本のタイトル：{{$items->title}}</dl>
+<dl>作者：{{$items->author}}</dl>
+<dl>感想：{{$items->impression}}</dl>
+<dl>評価：{{$items->eval}}</dl>
+</section>
 </div>
 <!--/contents-->
-
 
 <footer>
 <small>Copyright&copy; <a href="{{action('MysiteController@top')}}">DEVELOPMENT PRODUCTS</a> All Rights Reserved.</small>

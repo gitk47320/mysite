@@ -15,9 +15,14 @@ class MysiteController extends Controller
         return view('mysite.top');
     }
 
-    public function books(){
-        $items = DB::table('readrec')->get();
-        return view('mysite.books',['items' => $items]);
+    public function booklist(){
+        $items = DB::table('readrec')->simplePaginate(5);
+        return view('mysite.booklist',['items' => $items]);
+    }
+
+    public function bookeval(Request $req){
+        $items = DB::table('readrec')->where('id',$req->id)->first();
+        return view('mysite.bookeval',['items' => $items]);
     }
     
     public function postbooksadd(Request $req){

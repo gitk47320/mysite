@@ -34,7 +34,7 @@ button.addEventListener(function() {
 <nav id="menubar">
 <ul>
 <li class="current"><a href="{{action('MysiteController@top')}}">トップ</a></li>
-<li><a href="{{action('MysiteController@books')}}">読書記録</a></li>
+<li><a href="{{action('MysiteController@booklist')}}">読書記録</a></li>
 </ul>
 </nav>
 

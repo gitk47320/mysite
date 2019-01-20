@@ -16,11 +16,12 @@ Route::get('/', function () {
 });
 
 Route::get('top','MysiteController@top');
-Route::get('books','MysiteController@books');
+Route::get('booklist','MysiteController@booklist');
 Route::get('add','MysiteController@booksadd');
 Route::get('editlist','MysiteController@bookseditlist');
 Route::get('edit','MysiteController@bookspostforedit')->name('foredit');
 Route::get('products','MysiteController@products');
+Route::get('bookeval','MysiteController@bookeval');
 
 Route::post('books/add','MysiteController@bookspostadd');
 Route::post('books/delete','MysiteController@bookspostdelete')->name('delete');

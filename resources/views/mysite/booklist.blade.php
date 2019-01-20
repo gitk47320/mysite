@@ -26,7 +26,7 @@
 <nav id="menubar">
 <ul>
 <li><a href="{{action('MysiteController@top')}}">トップ</a></li>
-<li class="current"><a href="{{action('MysiteController@books')}}">読書記録</a></li>
+<li class="current"><a href="{{action('MysiteController@booklist')}}">読書記録</a></li>
 </ul>
 </nav>
 
@@ -35,16 +35,21 @@
 <h2 id="newinfo_hdr" class="close">読書記録</h2>
 <dl id="newinfo">
 
+<table border="1">
+<tr>
+<th width="75">本のタイトル</th>
+<th width="50">作者</th>
+</tr>
+<tr>
 @foreach($items as $items)
-<dl>本のタイトル：{{$items->title}}</dl>
-<dl>作者：{{$items->author}}</dl>
-<dl>感想：{{$items->impression}}</dl>
-<dl>評価：{{$items->eval}}</dl>
+<td><a href="{{action('MysiteController@bookeval')}}?id={{ $items->id }}">{{$items->title}}</td>
+<td>{{$items->author}}</td>
+</tr>
 @endforeach
+</table>
 </section>
 </div>
 <!--/contents-->
-
 
 <footer>
 <small>Copyright&copy; <a href="{{action('MysiteController@top')}}">DEVELOPMENT PRODUCTS</a> All Rights Reserved.</small>
