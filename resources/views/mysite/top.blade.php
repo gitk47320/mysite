@@ -40,7 +40,7 @@
 <dt>目的</dt>
 <dd>このサイトは作成者の読書記録や開発成果物をまとめておくための自己満足サイトです。</dd>
 <dt>技術情報</dt>
-<dd>このサイトの成り立ちは<a href="#">こちら</a></dd>
+<dd>このサイトの成り立ちは<a href="">こちら</a></dd>
 </dl>
 <h2 id="newinfo_hdr" class="close">自己紹介</h2>
 <dl id="newinfo">

@@ -26,8 +26,9 @@
 
 <nav id="menubar">
 <ul>
-<li class="current"><a href="{{action('MysiteController@top')}}">トップ</a></li>
+<li><a href="{{action('MysiteController@top')}}">トップ</a></li>
 <li><a href="{{action('MysiteController@booklist')}}">読書記録</a></li>
+<li><a href="{{action('MysiteController@products')}}">開発成果物</a></li>
 </ul>
 </nav>
 
