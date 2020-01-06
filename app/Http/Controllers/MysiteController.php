@@ -8,7 +8,7 @@ use DB;
 
 class MysiteController extends Controller
 {
-    const SAVEDIR = "C:\\Users\\junya\\source\\repos\\mysite";
+    const SAVEDIR = "hidden";
     const JSONFILE = "bulkadd.json";
 
     public function top(){
